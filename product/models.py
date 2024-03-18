@@ -23,6 +23,6 @@ class ProductMaterial(models.Model):
 
 
 class Warehouses(models.Model):
-    material_id = models.ForeignKey(Material, on_delete=models.CASCADE)
+    material_id = models.ForeignKey(Material, on_delete=models.CASCADE, verbose_name='homashiyo id')
     remainder = models.IntegerField(verbose_name='qolgan homashiyo soni')
     price = models.FloatField(verbose_name='narx')

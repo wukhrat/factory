@@ -13,14 +13,16 @@ class MaterialAdmin(admin.ModelAdmin):
 
 
 class ProductMaterialAdmin(admin.ModelAdmin):
-    list_display = ()
-    search_fields = ()
+    list_display = ('product_id', 'material_id', 'quantity')
+    search_fields = ('product_id', )
 
 
-class WerehousesAdmin(admin.ModelAdmin):
-    list_display = ()
-    search_fields = ()
+class WarehousesAdmin(admin.ModelAdmin):
+    list_display = ('material_id', 'remainder', 'price')
+    search_fields = ('material_id', )
 
 
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Material, MaterialAdmin)
+admin.site.register(ProductMaterial, ProductMaterialAdmin)
+admin.site.register(Warehouses, WarehousesAdmin)
